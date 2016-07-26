@@ -8,13 +8,16 @@
 
 #include <iostream>
 #include "NodeController.h"
+using namespace std;
 
 
 
 int main()
 {
     // insert code here...
+    cout << "Starting the process\n";
     NodeController * app = new NodeController();
     app->start();
+    cout << "Ending the process\n";
     return 0;
 }
