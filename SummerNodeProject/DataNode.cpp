@@ -7,3 +7,36 @@
 //
 
 #include "DataNode.h"
+
+template<class Type>
+DataNode::DataNode()
+{
+
+}
+
+DataNode::DataNode(Type nodeData)
+{
+
+}
+
+
+void DataNode::setNodeData(Type nData)
+{
+  
+}
+
+void DataNode::setNext(DataNode * nxt)
+{
+    
+}
+
+Type DataNode::getNodeData()
+{
+    
+}
+
+DataNode * DataNode::getNext()
+{
+    
+}
+
