@@ -9,34 +9,40 @@
 #include "DataNode.h"
 
 template<class Type>
-DataNode::DataNode()
+DataNode<Type>::DataNode()
 {
-
+    this->next = nullptr;
+    
 }
 
-DataNode::DataNode(Type nodeData)
+template<class Type>
+DataNode<Type>::DataNode(Type nodeData)
 {
-
+    this->nodeData = nodeData;
+    this->next = nodeData->next;
 }
 
-
-void DataNode::setNodeData(Type nData)
+template<class Type>
+void DataNode<Type>::setNodeData(Type nData)
 {
   
 }
 
-void DataNode::setNext(DataNode * nxt)
+template<class Type>
+void DataNode<Type>::setNext(DataNode * nxt)
 {
     
 }
 
-Type DataNode::getNodeData()
+template<class Type>
+Type DataNode<Type>::getNodeData()
 {
-    
+    return nodeData;
 }
 
-DataNode * DataNode::getNext()
+template<class Type>
+DataNode<Type> * DataNode<Type>::getNext()
 {
-    
+    return next;
 }
 
