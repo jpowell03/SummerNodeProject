@@ -7,9 +7,14 @@
 //
 
 #include <iostream>
+#include "NodeController.h"
 
-int main(int argc, const char * argv[]) {
+
+
+int main()
+{
     // insert code here...
-    std::cout << "Hello, World!\n";
+    NodeController * app = new NodeController();
+    app->start();
     return 0;
 }
