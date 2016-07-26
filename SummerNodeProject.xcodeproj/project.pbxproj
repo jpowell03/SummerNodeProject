@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A402C0591D47FE6A007EC8FE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A402C0581D47FE6A007EC8FE /* main.cpp */; };
 		A402C0611D47FEC0007EC8FE /* DataNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A402C05F1D47FEC0007EC8FE /* DataNode.cpp */; };
+		A402C0661D480C53007EC8FE /* NodeController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A402C0641D480C53007EC8FE /* NodeController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		A402C0581D47FE6A007EC8FE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A402C05F1D47FEC0007EC8FE /* DataNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataNode.cpp; path = SummerNodeProject/DataNode.cpp; sourceTree = "<group>"; };
 		A402C0601D47FEC0007EC8FE /* DataNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataNode.h; path = SummerNodeProject/DataNode.h; sourceTree = "<group>"; };
+		A402C0641D480C53007EC8FE /* NodeController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeController.cpp; sourceTree = "<group>"; };
+		A402C0651D480C53007EC8FE /* NodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 		A402C04C1D47FE69007EC8FE = {
 			isa = PBXGroup;
 			children = (
+				A402C0631D480BFB007EC8FE /* Controller */,
 				A402C0571D47FE69007EC8FE /* SummerNodeProject */,
 				A402C0621D47FFB7007EC8FE /* Model */,
 				A402C0561D47FE69007EC8FE /* Products */,
@@ -73,6 +77,16 @@
 				A402C0601D47FEC0007EC8FE /* DataNode.h */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A402C0631D480BFB007EC8FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A402C0641D480C53007EC8FE /* NodeController.cpp */,
+				A402C0651D480C53007EC8FE /* NodeController.h */,
+			);
+			name = Controller;
+			path = SummerNodeProject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A402C0661D480C53007EC8FE /* NodeController.cpp in Sources */,
 				A402C0591D47FE6A007EC8FE /* main.cpp in Sources */,
 				A402C0611D47FEC0007EC8FE /* DataNode.cpp in Sources */,
 			);
