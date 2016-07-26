@@ -7,11 +7,18 @@
 //
 
 #include "NodeController.h"
+#include "DataNode.cpp"     // only because its a template file.  can only do this once for the hole projet
+#include <string>
+#include <iostream>
+using namespace std;
 
 
 void NodeController :: tryNodes()
 {
-    
+    DataNode<int> numberNode;
+    DataNode<string> wordNode;
+    numberNode.setNodeData(345);
+    cout << numberNode.getNodeData() << endl;
 }
 
 void NodeController :: start()
