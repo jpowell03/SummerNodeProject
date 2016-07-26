@@ -25,13 +25,13 @@ DataNode<Type>::DataNode(Type nodeData)
 template<class Type>
 void DataNode<Type>::setNodeData(Type nData)
 {
-  
+    this->nodeData = nData;
 }
 
 template<class Type>
-void DataNode<Type>::setNext(DataNode * nxt)
+void DataNode<Type>::setNext(DataNode<Type> * nxt)
 {
-    
+    this->next = nxt;
 }
 
 template<class Type>
