@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A402C0591D47FE6A007EC8FE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A402C0581D47FE6A007EC8FE /* main.cpp */; };
+		A402C0611D47FEC0007EC8FE /* DataNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A402C05F1D47FEC0007EC8FE /* DataNode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		A402C0551D47FE69007EC8FE /* SummerNodeProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SummerNodeProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		A402C0581D47FE6A007EC8FE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A402C05F1D47FEC0007EC8FE /* DataNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataNode.cpp; path = SummerNodeProject/DataNode.cpp; sourceTree = "<group>"; };
+		A402C0601D47FEC0007EC8FE /* DataNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataNode.h; path = SummerNodeProject/DataNode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				A402C0571D47FE69007EC8FE /* SummerNodeProject */,
+				A402C0621D47FFB7007EC8FE /* Model */,
 				A402C0561D47FE69007EC8FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +64,15 @@
 				A402C0581D47FE6A007EC8FE /* main.cpp */,
 			);
 			path = SummerNodeProject;
+			sourceTree = "<group>";
+		};
+		A402C0621D47FFB7007EC8FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A402C05F1D47FEC0007EC8FE /* DataNode.cpp */,
+				A402C0601D47FEC0007EC8FE /* DataNode.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A402C0591D47FE6A007EC8FE /* main.cpp in Sources */,
+				A402C0611D47FEC0007EC8FE /* DataNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
