@@ -24,6 +24,7 @@ void NodeController :: tryNodes()
 void NodeController :: start()
 {
     tryNodes();
+    // nex line for synictest
 }
 
 
