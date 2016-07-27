@@ -24,8 +24,8 @@ SummerArray<Type>::SummerArray(int length)
     end = start;
     for(int index=1; index<length; index++)
     {
-        DataNode<Type> next = new DataNode<Type>();
-        end->setNodePointer(next);
+        DataNode<Type> * next = new DataNode<Type>();
+        end->setNext(next);
         end = next;
     }
     
