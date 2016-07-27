@@ -28,8 +28,32 @@ void SummerList<Type> :: addAtIndex(int index, Type data)
     assert(index >= 0 && index <= size);
     DataNode<Type> * indexPointer = front;
     
+    DataNode<Type> * newNode = new DataNode<Type>(data);
     
-    
+
+    if(index == 0)
+    {
+        newNode->setNext(indexPointer);
+        front = newNode;
+    }
+    else if(index == size-1)
+    {
+        end->setNext(newNode);
+        end = newNode;
+    }
+    else
+    {
+        for(int position = 0; position < index - 1; position++)
+        {
+            indexPointer = indexPointer->getNodePointer();
+        }
+        
+        newNode->setNext(indexPointer->getNext());
+        //DataNode<Type> * temp = indexPointer->getNext();
+        //newNode->setNext(temp);
+        
+        indexPointer->setNext(newNode);   // setNext == setNodePointer
+    }
 }
 
 
