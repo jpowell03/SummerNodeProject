@@ -29,12 +29,13 @@ void SummerList<Type> :: addAtIndex(int index, Type data)
    
     DataNode<Type> * newNode = new DataNode<Type>(data);
     
-    // if list is empty need to set front and end;a
+    // if list is empty need to set front and end to newNode
     if(size == 0)
     {
         front = newNode;
         end = newNode;
     }
+    
     DataNode<Type> * indexPointer = front;
     
 
@@ -110,6 +111,50 @@ int SummerList<Type> :: getSize()
 template<class Type>
 Type SummerList<Type> :: remove(int index)
 {
+    assert(index >= 0 && index <= size);
+    
+    Type removedValue;
+    
+    DataNode<Type> * indexPointer = front;
+    DataNode<Type> * removedNode = nullptr;
+    DataNode<Type> * next = nullptr;
+    
+    if(size == 1)
+    {
+        removedValue = front->getNodeData();
+        front = nullptr;
+        end = nullptr;
+        delete indexPointer;
+    }
+    else if(index == 0)
+    {
+        removedValue = front->getNodeData();
+        front = front->getNext();
+        delete indexPointer;
+    }
+    else
+    {
+        for(int position = 0; position < index - 1; position++)
+        {
+            indexPointer = indexPointer->getNext();
+        }
+        removedNode = indexPointer->getNext();
+        next = removedNode->getNext();
+        
+        if(removedNode == end)
+        {
+            end = indexPointer;
+        }
+        indexPointer->setNext(next);
+        removedNode->setNext(nullptr);
+        
+        removedValue = removedNode->getNodeData();
+        
+        delete removedNode;
+    }
+    size--;
+    return removedValue;
+    
     
 }
 
