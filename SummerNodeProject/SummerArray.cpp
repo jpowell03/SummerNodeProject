@@ -46,7 +46,7 @@ Type SummerArray<Type>::getFromIndex(int position)
     DataNode<Type> * indexPointer = front;
     for(int index=0; index<position; index++)
     {
-        indexPointer = indexPointer->getNodePointer();
+        indexPointer = indexPointer->getNext();
     }
     
     retrieveValue = indexPointer->getNodeData();
@@ -63,4 +63,19 @@ template <class Type>
 Type SummerArray<Type> :: getLast()
 {
     return end->getNodeData();
+}
+
+template<class Type>
+void SummerArray<Type>::setAtIndex(int position, Type data)
+{
+    assert(position >= 0 && position < length);
+ 
+    DataNode<Type> * indexPointer = front;
+    for(int index=0; index<position; index++)
+    {
+        indexPointer = indexPointer->getNext();
+    }
+    
+    indexPointer->setNodeData(data);
+
 }
