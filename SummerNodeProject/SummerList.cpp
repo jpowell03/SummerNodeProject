@@ -26,9 +26,16 @@ template<class Type>
 void SummerList<Type> :: addAtIndex(int index, Type data)
 {
     assert(index >= 0 && index <= size);
-    DataNode<Type> * indexPointer = front;
-    
+   
     DataNode<Type> * newNode = new DataNode<Type>(data);
+    
+    // if list is empty need to set front and end;a
+    if(size == 0)
+    {
+        front = newNode;
+        end = newNode;
+    }
+    DataNode<Type> * indexPointer = front;
     
 
     if(index == 0)
@@ -54,6 +61,20 @@ void SummerList<Type> :: addAtIndex(int index, Type data)
         
         indexPointer->setNext(newNode);   // setNext == setNodePointer
     }
+    size++;
+}
+
+
+template<class Type>
+void SummerList<Type> :: add(Type data)
+{
+    addAtIndex(size-1, data);
+}
+
+template<class Type>
+void SummerList<Type> :: addAtFront(Type data)
+{
+    addAtIndex(0, data);
 }
 
 
@@ -82,18 +103,6 @@ void SummerList<Type> :: setAtIndex(int index, Type data)
 }
 template<class Type>
 int SummerList<Type> :: getSize()
-{
-    
-}
-
-template<class Type>
-void SummerList<Type> :: add(Type data)
-{
-    
-}
-
-template<class Type>
-void SummerList<Type> :: addAtFront(Type data)
 {
     
 }
