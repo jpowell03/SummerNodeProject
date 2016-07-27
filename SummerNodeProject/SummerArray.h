@@ -23,10 +23,10 @@ private:
     
 public:
     SummerArray(int length);
-    Type getFromIndex(int index);
+    Type getFromIndex(int position);
     Type getFirst();
     Type getLast();
-    void setAtIndex(int index, Type data);
+    void setAtIndex(int position, Type data);
 
     void sort();
     void resize(int newSize);

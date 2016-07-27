@@ -34,3 +34,33 @@ SummerArray<Type>::SummerArray(int length)
         modifiedNodes[index] = false;
     }
 }
+
+template <class Type>
+Type SummerArray<Type>::getFromIndex(int position)
+{
+    assert(position >= 0);
+    assert(position < length);
+    
+    Type retrieveValue;
+    
+    DataNode<Type> * indexPointer = front;
+    for(int index=0; index<position; index++)
+    {
+        indexPointer = indexPointer->getNodePointer();
+    }
+    
+    retrieveValue = indexPointer->getNodeData();
+    return retrieveValue;
+}
+
+template <class Type>
+Type SummerArray<Type> :: getFirst()
+{
+    return front->getNodeData();
+}
+
+template <class Type>
+Type SummerArray<Type> :: getLast()
+{
+    return end->getNodeData();
+}
