@@ -27,6 +27,7 @@ public:
     Type getFirst();
     Type getLast();
     void setAtIndex(int position, Type data);
+    int getLength();
 
     void sort();
     void resize(int newSize);

@@ -79,3 +79,9 @@ void SummerArray<Type>::setAtIndex(int position, Type data)
     indexPointer->setNodeData(data);
 
 }
+
+template<class Type>
+int SummerArray<Type>::getLength()  //instead of *nameOfArray/sizeof(Type);
+{
+    return length;
+}
