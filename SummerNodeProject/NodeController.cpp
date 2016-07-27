@@ -7,7 +7,8 @@
 //
 
 #include "NodeController.h"
-#include "DataNode.cpp"     // only because its a template file.  can only do this once for the hole projet
+#include "DataNode.cpp"     // only because its a template file.  can only do this once for the hole project
+#include "SummerArray.cpp"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -19,6 +20,10 @@ void NodeController :: tryNodes()
     DataNode<string> wordNode;
     numberNode.setNodeData(345);
     cout << numberNode.getNodeData() << endl;
+}
+void NodeController:: :: tryArray()
+{
+    
 }
 
 void NodeController :: start()

@@ -15,7 +15,7 @@ class NodeController
 {
 private:
     void tryNodes();
-    
+    void tryArray();
 public:
     void start();
 };
