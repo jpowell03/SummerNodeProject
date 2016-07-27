@@ -23,6 +23,7 @@ private:
     DataNode<Type> * end;
     
 public:
+    SummerList();
     Type getFromIndex(int index);
     Type getFirst();
     Type getLast();
