@@ -20,35 +20,40 @@ template<class Type>
 void BinaryTree<Type>::insert(Type data)
 {
     BinaryTreeNode<Type> * insertedNode = new BinaryTreeNode<Type>(data);
-    insert(insertedNode, root);
-    cout << "root " << root << endl;
+    root = insert(insertedNode, root);
+//    cout << "root " << root << endl;
     
 }
 
 template<class Type>
-void BinaryTree<Type>::insert(BinaryTreeNode<Type> * insertedNode, BinaryTreeNode<Type> * currentRootNode)
+BinaryTreeNode<Type> * BinaryTree<Type>::insert(BinaryTreeNode<Type> * insertedNode, BinaryTreeNode<Type> * currentRootNode)
 {
-    if(root == nullptr)
+    /*if(root == nullptr)
     {
         root = insertedNode;
         cout << "root node " << root << endl;
         cout << "insert Data " << insertedNode->getNodeData() << endl;
     }
-    else if(currentRootNode == nullptr)
+    else*/
+    if(currentRootNode == nullptr)
     {
-        currentRootNode = insertedNode;
-        cout << "insert Data " << currentRootNode->getNodeData() << endl;
+        return insertedNode;
+        //currentRootNode = insertedNode;
+        //cout << "insert Data " << currentRootNode->getNodeData() << endl;
     }
     else if(insertedNode->getNodeData() < currentRootNode->getNodeData())
     {
-        cout << "inserted left\n";
-        insert(insertedNode, currentRootNode->getLeftChild());
+        //cout << "inserted left\n";
+        //insert(insertedNode, currentRootNode->getLeftChild());
+        currentRootNode->setLeftChild(insert(insertedNode, currentRootNode->getLeftChild()));
     }
     else if(insertedNode->getNodeData() > currentRootNode->getNodeData())
     {
-        cout << "inserted right\n";
-        insert(insertedNode, currentRootNode->getRightChild());
+        //cout << "inserted right\n";
+        //insert(insertedNode, currentRootNode->getRightChild());
+        currentRootNode->setRightChild(insert(insertedNode, currentRootNode->getRightChild()));
     }
+    return currentRootNode;
 
 }
 
@@ -77,7 +82,6 @@ void BinaryTree<Type>::postOrderTraversal(BinaryTreeNode<Type> * currentNode)
 template<class Type>
 void BinaryTree<Type>::inOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
-    cout << currentNode->getNodeData() << endl;
     if(currentNode != nullptr)
     {
         inOrderTraversal(currentNode->getLeftChild());
