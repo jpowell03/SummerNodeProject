@@ -19,7 +19,7 @@ template<class Type>
 DataNode<Type>::DataNode(Type nodeData)
 {
     this->nodeData = nodeData;
-    this->next = nodeData->next;
+    this->next = nullptr;
 }
 
 template<class Type>
