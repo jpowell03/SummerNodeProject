@@ -8,4 +8,64 @@
 
 #include "BinaryTree.h"
 
+template<class Type>
+BinaryTree<Type>::BinaryTree()
+{
+    root = nullptr;
+}
+
+template<class Type>
+void BinaryTree<Type>::insert(Type data)
+{
+    BinaryTreeNode<Type> * insertedNode = new BinaryTreeNode<Type>(data);
+    insert(insertedNode, root);
+}
+
+template<class Type>
+void BinaryTree<Type>::insert(BinaryTreeNode<Type> * insertedNode, BinaryTreeNode<Type> * currentRootNode)
+{
+    if(currentRootNode == nullptr)
+    {
+        currentRootNode = insertedNode;
+    }
+    else if(insertedNode->getNodeData() < currentRootNode->getNodeData())
+    {
+        insert(insertedNode, currentRootNode->getLeftChild);
+    }
+    else if(insertedNode->getNodeData() > currentRootNode->getNodeData())
+    {
+        insert(insertedNode, currentRootNode->getRightChild);
+    }
+
+}
+
+template<class Type>
+void BinaryTree<Type>::preOrderTraversal()
+{
+    
+}
+
+template<class Type>
+void BinaryTree<Type>::postOrderTraversal()
+{
+    
+}
+
+template<class Type>
+void BinaryTree<Type>::inOrderTraversal()
+{
+    
+}
+
+template<class Type>
+int BinaryTree<Type>::calculateSize()
+{
+    
+}
+
+template<class Type>
+bool BinaryTree<Type>::remove(Type data)
+{
+    
+}
 
