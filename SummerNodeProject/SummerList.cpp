@@ -95,7 +95,7 @@ template<class Type>
 void SummerList<Type> :: sort()
 {
     
-};
+}
 
 template<class Type>
 void SummerList<Type> :: setAtIndex(int index, Type data)
@@ -105,7 +105,7 @@ void SummerList<Type> :: setAtIndex(int index, Type data)
 template<class Type>
 int SummerList<Type> :: getSize()
 {
-    
+    return size;
 }
 
 template<class Type>
