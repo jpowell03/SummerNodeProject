@@ -7,6 +7,8 @@
 //
 
 #include "DataNode.h"
+#include <iostream>
+using namespace std;
 
 template<class Type>
 DataNode<Type>::DataNode()
