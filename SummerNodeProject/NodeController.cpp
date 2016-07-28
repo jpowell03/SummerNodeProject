@@ -9,6 +9,7 @@
 #include "NodeController.h"
 #include "DataNode.cpp"     // only because its a template file.  can only do this once for the hole project
 #include "SummerArray.cpp"
+#include "BinaryTree.cpp"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -27,11 +28,36 @@ void NodeController :: tryArray()
     SummerArray<int> testArray(4);
 }
 
+void NodeController:: tryTree()
+{
+    BinaryTree<int> sampleTree;
+    sampleTree.insert(7);
+    sampleTree.insert(5);
+    sampleTree.insert(213);
+    sampleTree.insert(-129);
+    sampleTree.insert(5);
+    sampleTree.insert(123124);
+    sampleTree.insert(0);
+    
+    cout<< "The in order traversal\n";
+    sampleTree.inOrderTraversal(sampleTree.getRoot());
+    cout << endl << endl;
+
+    cout<< "The pre order traversal\n";
+    sampleTree.preOrderTraversal(sampleTree.getRoot());
+    cout << endl << endl;
+    
+    cout<< "The post order traversal\n";
+    sampleTree.postOrderTraversal(sampleTree.getRoot());
+    cout << endl << endl;
+}
+
 void NodeController :: start()
 {
     //tryNodes();
-    tryArray();
-    // nex line for synictest
+    //tryArray();
+    tryTree();
+    // next line for synictest
 }
 
 

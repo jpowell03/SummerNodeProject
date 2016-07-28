@@ -32,11 +32,11 @@ void BinaryTree<Type>::insert(BinaryTreeNode<Type> * insertedNode, BinaryTreeNod
     }
     else if(insertedNode->getNodeData() < currentRootNode->getNodeData())
     {
-        insert(insertedNode, currentRootNode->getLeftChild);
+        insert(insertedNode, currentRootNode->getLeftChild());
     }
     else if(insertedNode->getNodeData() > currentRootNode->getNodeData())
     {
-        insert(insertedNode, currentRootNode->getRightChild);
+        insert(insertedNode, currentRootNode->getRightChild());
     }
 
 }
@@ -47,8 +47,8 @@ void BinaryTree<Type>::preOrderTraversal(BinaryTreeNode<Type> * currentNode)
     if(currentNode != nullptr)
     {
         cout << currentNode->getNodeData() << ", ";
-        preOrderTraversal(currentNode->getLeftChild);
-        preOrderTraversal(currentNode->getRightChild);
+        preOrderTraversal(currentNode->getLeftChild());
+        preOrderTraversal(currentNode->getRightChild());
     }
 }
 
@@ -57,8 +57,8 @@ void BinaryTree<Type>::postOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
     if(currentNode != nullptr)
     {
-        postOrderTraversal(currentNode->getLeftChild);
-        postOrderTraversal(currentNode->getRightChild);
+        postOrderTraversal(currentNode->getLeftChild());
+        postOrderTraversal(currentNode->getRightChild());
         cout << currentNode->getNodeData() << ", ";
     }
 }
@@ -68,9 +68,9 @@ void BinaryTree<Type>::inOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
     if(currentNode != nullptr)
     {
-        inOrderTraversal(currentNode->getLeftChild);
+        inOrderTraversal(currentNode->getLeftChild());
         cout << currentNode->getNodeData() << ", ";
-        inOrderTraversal(currentNode->getRightChild);
+        inOrderTraversal(currentNode->getRightChild());
     }
 }
 
@@ -86,3 +86,8 @@ bool BinaryTree<Type>::remove(Type data)
     
 }
 
+template<class Type>
+BinaryTreeNode<Type> * BinaryTree<Type>::getRoot()
+{
+    return root;
+}
