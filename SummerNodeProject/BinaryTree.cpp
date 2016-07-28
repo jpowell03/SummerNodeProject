@@ -112,6 +112,10 @@ int BinaryTree<Type>::getSize()
 template<class Type>
 bool BinaryTree<Type>::remove(Type data)
 {
+    BinaryTreeNode<Type> * currentNode;
+    BinaryTreeNode<Type> * trailCurrentNode;
+    BinaryTreeNode<Type> * temp;
+    
     
 }
 
