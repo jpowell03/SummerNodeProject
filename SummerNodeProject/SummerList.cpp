@@ -161,5 +161,13 @@ Type SummerList<Type> :: remove(int index)
 template<class Type>
 bool SummerList<Type> :: contains(Type data)
 {
+    DataNode<Type> * indexPointer = front;
     
+    for(int index=0; index<size; index++)
+    {
+        if(indexPointer->nodeData == data)
+            return true;
+        indexPointer = indexPointer->getNext();
+    }
+    return false;
 }
