@@ -91,9 +91,22 @@ void BinaryTree<Type>::inOrderTraversal(BinaryTreeNode<Type> * currentNode)
 }
 
 template<class Type>
-int BinaryTree<Type>::calculateSize()
+void BinaryTree<Type>::calculateSize(BinaryTreeNode<Type> * currentNode)
 {
-    
+    if(currentNode != nullptr)
+    {
+        calculateSize(currentNode->getLeftChild());
+        calculateSize(currentNode->getRightChild());
+        size++;
+    }
+}
+
+template<class Type>
+int BinaryTree<Type>::getSize()
+{
+    size = 0;
+    calculateSize(root);
+    return size;
 }
 
 template<class Type>

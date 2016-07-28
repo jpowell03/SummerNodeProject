@@ -18,13 +18,15 @@ class BinaryTree
 private:
     BinaryTreeNode<Type> * root;
     BinaryTreeNode<Type> * insert(BinaryTreeNode<Type> * insertedNode, BinaryTreeNode<Type> * currentRootNode);
+    int size;
 public:
     BinaryTree();
     void insert(Type data);
+    void calculateSize(BinaryTreeNode<Type> * currentNode);
     void preOrderTraversal(BinaryTreeNode<Type> * currentNode);
     void postOrderTraversal(BinaryTreeNode<Type> * currentNode);
     void inOrderTraversal(BinaryTreeNode<Type> * currentNode);
-    int calculateSize();
+    int  getSize();
     bool remove(Type data);
     BinaryTreeNode<Type>* getRoot();
 };

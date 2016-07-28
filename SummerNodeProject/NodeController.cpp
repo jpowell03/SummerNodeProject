@@ -50,6 +50,8 @@ void NodeController:: tryTree()
     cout<< "The post order traversal\n";
     sampleTree.postOrderTraversal(sampleTree.getRoot());
     cout << endl << endl;
+    
+    cout << "Size of tree = " << sampleTree.getSize() << endl;
 }
 
 void NodeController :: start()
