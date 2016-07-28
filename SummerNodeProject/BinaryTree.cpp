@@ -7,6 +7,8 @@
 //
 
 #include "BinaryTree.h"
+#include <iostream>
+using std::cout;
 
 template<class Type>
 BinaryTree<Type>::BinaryTree()
@@ -40,21 +42,36 @@ void BinaryTree<Type>::insert(BinaryTreeNode<Type> * insertedNode, BinaryTreeNod
 }
 
 template<class Type>
-void BinaryTree<Type>::preOrderTraversal()
+void BinaryTree<Type>::preOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
-    
+    if(currentNode != nullptr)
+    {
+        cout << currentNode->getNodeData() << ", ";
+        preOrderTraversal(currentNode->getLeftChild);
+        preOrderTraversal(currentNode->getRightChild);
+    }
 }
 
 template<class Type>
-void BinaryTree<Type>::postOrderTraversal()
+void BinaryTree<Type>::postOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
-    
+    if(currentNode != nullptr)
+    {
+        postOrderTraversal(currentNode->getLeftChild);
+        postOrderTraversal(currentNode->getRightChild);
+        cout << currentNode->getNodeData() << ", ";
+    }
 }
 
 template<class Type>
-void BinaryTree<Type>::inOrderTraversal()
+void BinaryTree<Type>::inOrderTraversal(BinaryTreeNode<Type> * currentNode)
 {
-    
+    if(currentNode != nullptr)
+    {
+        inOrderTraversal(currentNode->getLeftChild);
+        cout << currentNode->getNodeData() << ", ";
+        inOrderTraversal(currentNode->getRightChild);
+    }
 }
 
 template<class Type>
