@@ -58,6 +58,7 @@ void NodeController :: start()
 {
     //tryNodes();
     //tryArray();
+
     tryTree();
     // next line for synictest
 }
