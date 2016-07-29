@@ -16,6 +16,7 @@
 		A402C0761D4A698A007EC8FE /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A402C0741D4A698A007EC8FE /* BinaryTree.cpp */; };
 		A4B167A01D4BA55800274A68 /* HashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4B1679E1D4BA55800274A68 /* HashTable.cpp */; };
 		A4B167A31D4BB21B00274A68 /* HashNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4B167A11D4BB21B00274A68 /* HashNode.cpp */; };
+		A4B167A61D4BF4B600274A68 /* Graphs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4B167A41D4BF4B600274A68 /* Graphs.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		A4B1679F1D4BA55800274A68 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HashTable.h; path = SummerNodeProject/HashTable.h; sourceTree = "<group>"; };
 		A4B167A11D4BB21B00274A68 /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HashNode.cpp; path = SummerNodeProject/HashNode.cpp; sourceTree = "<group>"; };
 		A4B167A21D4BB21B00274A68 /* HashNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HashNode.h; path = SummerNodeProject/HashNode.h; sourceTree = "<group>"; };
+		A4B167A41D4BF4B600274A68 /* Graphs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Graphs.cpp; path = SummerNodeProject/Graphs.cpp; sourceTree = "<group>"; };
+		A4B167A51D4BF4B600274A68 /* Graphs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Graphs.h; path = SummerNodeProject/Graphs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				A4B1679F1D4BA55800274A68 /* HashTable.h */,
 				A4B167A11D4BB21B00274A68 /* HashNode.cpp */,
 				A4B167A21D4BB21B00274A68 /* HashNode.h */,
+				A4B167A41D4BF4B600274A68 /* Graphs.cpp */,
+				A4B167A51D4BF4B600274A68 /* Graphs.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				A402C0661D480C53007EC8FE /* NodeController.cpp in Sources */,
 				A4B167A01D4BA55800274A68 /* HashTable.cpp in Sources */,
 				A402C0731D4A53B8007EC8FE /* BinaryTreeNode.cpp in Sources */,
+				A4B167A61D4BF4B600274A68 /* Graphs.cpp in Sources */,
 				A402C0761D4A698A007EC8FE /* BinaryTree.cpp in Sources */,
 				A4B167A31D4BB21B00274A68 /* HashNode.cpp in Sources */,
 				A402C0591D47FE6A007EC8FE /* main.cpp in Sources */,
