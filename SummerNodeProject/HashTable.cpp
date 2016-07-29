@@ -79,7 +79,7 @@ long  HashTable<Type> :: handleCollision(Type data, long currentPosition)
     long updatedPosition = -1;
     HashNode<Type> * indexPointer = front;
     
-    for(long index = 1; index < currentPosition + 1; index++)
+    for(long index = 0; index < currentPosition + 1; index++)
     {
         indexPointer = indexPointer->getNode();
     }
@@ -96,6 +96,7 @@ long  HashTable<Type> :: handleCollision(Type data, long currentPosition)
 
     if(updatedPosition == -1)
     {
+        indexPointer = front;
         for(long index = 0; (index < currentPosition && updatedPosition == -1); index++)
         {
             if(!indexPointer->hasStuffed())
@@ -117,7 +118,7 @@ void HashTable<Type> :: displayContents()
     for(int index = 0; index<capacity; index++)
     {
         if(indexPointer->hasStuffed())
-            cout << indexPointer->getData() << endl;
+            cout << indexPointer->getData() << " # " << index << endl;
         
         indexPointer = indexPointer->getNode();
     }

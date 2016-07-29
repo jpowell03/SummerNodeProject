@@ -59,11 +59,15 @@ void NodeController:: tryTree()
 void NodeController:: tryHash()
 {
     HashTable<int>sampleHash;
+    int number;
     
     for(int index=0; index < 15; index++)
     {
-        sampleHash.add(rand() % 1001);
+        number = rand() % 1001;
+        sampleHash.add(number);
+        cout << number << ", ";
     }
+    cout << endl << endl;
     
     sampleHash.displayContents();
     
