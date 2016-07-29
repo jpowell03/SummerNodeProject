@@ -10,7 +10,7 @@
 #define HashTable_h
 
 #include <stdio.h>
-#include "HashNode.h"
+#include "HashNode.cpp"
 
 template<class Type>
 class HashTable
@@ -31,6 +31,7 @@ public:
     HashTable();
     void add(Type data);
     bool remove(Type data);
+    void displayContents();
     
     
     

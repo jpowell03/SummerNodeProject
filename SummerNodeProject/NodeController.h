@@ -17,6 +17,8 @@ private:
     void tryNodes();
     void tryArray();
     void tryTree();
+    void tryHash();
+    
 public:
     void start();
 };

@@ -8,6 +8,7 @@
 
 #include "HashTable.h"
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 template<class Type>
@@ -46,7 +47,7 @@ void HashTable<Type> :: add(Type data)
     }
     
     indexPointer->setData(data);
-    indexPointer->isStuffed(true);
+    indexPointer->setStuffed(true);
 
 }
 
@@ -55,7 +56,7 @@ long  HashTable<Type> :: findPosition(Type data)
 {
     long insertedPosition;
     
-    unsigned long address = &data;
+    unsigned long address = (long)&data;
     
     insertedPosition = address % capacity;
     HashNode<Type> * indexPointer = front;
@@ -64,9 +65,9 @@ long  HashTable<Type> :: findPosition(Type data)
         indexPointer = indexPointer->getNode();
     }
         
-    if(indexPointer->isStuffed())
+    if(indexPointer->hasStuffed())
        {
-           indexPointer = handleCollision(data, insertedPosition);
+           insertedPosition = handleCollision(data, insertedPosition);
        }
     
     return insertedPosition;
@@ -86,7 +87,7 @@ long  HashTable<Type> :: handleCollision(Type data, long currentPosition)
     
     for(long index = currentPosition + 1; (index < capacity && updatedPosition == -1); index++)
     {
-        if(!indexPointer->isStuffed)
+        if(!indexPointer->hasStuffed())
         {
             updatedPosition = index;
         }
@@ -97,7 +98,7 @@ long  HashTable<Type> :: handleCollision(Type data, long currentPosition)
     {
         for(long index = 0; (index < currentPosition && updatedPosition == -1); index++)
         {
-            if(!indexPointer->isStuffed)
+            if(!indexPointer->hasStuffed())
             {
                 updatedPosition = index;
             }
@@ -107,6 +108,19 @@ long  HashTable<Type> :: handleCollision(Type data, long currentPosition)
     
     return updatedPosition;
     
+}
+
+template<class Type>
+void HashTable<Type> :: displayContents()
+{
+    HashNode<Type> * indexPointer = front;
+    for(int index = 0; index<capacity; index++)
+    {
+        if(indexPointer->hasStuffed())
+            cout << indexPointer->getData() << endl;
+        
+        indexPointer = indexPointer->getNode();
+    }
 }
 
 template<class Type>

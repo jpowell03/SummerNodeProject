@@ -10,8 +10,10 @@
 #include "DataNode.cpp"     // only because its a template file.  can only do this once for the hole project
 #include "SummerArray.cpp"
 #include "BinaryTree.cpp"
+#include "HashTable.cpp"
 #include <string>
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 
@@ -54,12 +56,26 @@ void NodeController:: tryTree()
     cout << "Size of tree = " << sampleTree.getSize() << endl;
 }
 
+void NodeController:: tryHash()
+{
+    HashTable<int>sampleHash;
+    
+    for(int index=0; index < 15; index++)
+    {
+        sampleHash.add(rand() % 1001);
+    }
+    
+    sampleHash.displayContents();
+    
+}
+
 void NodeController :: start()
 {
     //tryNodes();
     //tryArray();
-
-    tryTree();
+    //tryTree();
+    
+    tryHash();
     // next line for synictest
 }
 
