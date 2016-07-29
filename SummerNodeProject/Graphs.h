@@ -10,6 +10,7 @@
 #define Graphs_h
 
 #include <stdio.h>
+#include <set>
 
 template<class Type>
 class Graphs
@@ -33,6 +34,8 @@ public:
     bool isEdge(int source, int target) const;
     std::set<int> neighbors(int vertex) const;
     Type operator[] (int vertex) const;
+    void depthFirstTraveral(Graphs<Type> graph, int vertex);
+    void breadthFirstTraversal(Graphs<Type> graph, int vertex);
     
 };
 
