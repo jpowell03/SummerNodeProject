@@ -66,15 +66,46 @@ long  HashTable<Type> :: findPosition(Type data)
         
     if(indexPointer->isStuffed())
        {
-           indexPointer = handleCollision(data);
+           indexPointer = handleCollision(data, insertedPosition);
        }
     
     return insertedPosition;
 }
 
 template<class Type>
-long  HashTable<Type> :: handleCollision(Type data)
+long  HashTable<Type> :: handleCollision(Type data, long currentPosition)
 {
+    long updatedPosition = -1;
+    HashNode<Type> * indexPointer = front;
+    
+    for(long index = 1; index < currentPosition + 1; index++)
+    {
+        indexPointer = indexPointer->getNode();
+    }
+
+    
+    for(long index = currentPosition + 1; (index < capacity && updatedPosition == -1); index++)
+    {
+        if(!indexPointer->isStuffed)
+        {
+            updatedPosition = index;
+        }
+        indexPointer = indexPointer->getNode();
+    }
+
+    if(updatedPosition == -1)
+    {
+        for(long index = 0; (index < currentPosition && updatedPosition == -1); index++)
+        {
+            if(!indexPointer->isStuffed)
+            {
+                updatedPosition = index;
+            }
+            indexPointer = indexPointer->getNode();
+        }
+    }
+    
+    return updatedPosition;
     
 }
 
