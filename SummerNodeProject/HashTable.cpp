@@ -11,6 +11,37 @@
 using namespace std;
 
 template<class Type>
+HashTable<Type> :: HashTable()
+{
+    this->capacity = 101;
+    this->size = 0;
+    this->efficiencyPercentage = 2.0/3.0;
+    this->front = new HashNode<Type>();
+    HashNode<Type> * currentEnd = front;
+    
+    // loop to create the first array of nodes for storage.
+    for(int index = 1; index < capacity; index++)
+    {
+        HashNode<Type> * next = new HashNode<Type>();  // create an node
+        currentEnd->setNode(next);                     // connect to the next node
+        currentEnd = next;                             // shift to next node
+        
+    }
+}
+
+template<class Type>
+void HashTable<Type> :: add(Type data)
+{
+    capacity = 101;
+    size = 0;
+    efficiencyPercentage = 2.0/3.0;
+    front = new HashNode<Type>[capacity];
+    //this->data = data;
+}
+
+
+
+template<class Type>
 bool  HashTable<Type> :: isPrime(int number)
 {
     if(!(number%2))
@@ -51,18 +82,6 @@ long  HashTable<Type> :: findPosition(Type data)
 
 template<class Type>
 long  HashTable<Type> :: handleCollision(Type data)
-{
-    
-}
-
-template<class Type>
-HashTable<Type> :: HashTable()
-{
-    
-}
-
-template<class Type>
-void HashTable<Type> :: add(Type data)
 {
     
 }
