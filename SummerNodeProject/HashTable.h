@@ -10,7 +10,7 @@
 #define HashTable_h
 
 #include <stdio.h>
-//#include "HashNode.h"
+#include "HashNode.h"
 
 template<class Type>
 class HashTable
@@ -19,7 +19,7 @@ private:
     int capacity;  // can hold
     int size;      // items in the table
     double efficiencyPercentage;  // how full do you want it to get before resizing
-//    HashNode<Type> * front;
+    HashNode<Type> * front;
     bool isPrime(int number);
     void resize();
     long nextPrime(long current);

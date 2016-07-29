@@ -11,13 +11,16 @@
 template <class Type>
 HashNode<Type> :: HashNode()
 {
-    
+    isStuffed = false;
+    nextNode = nullptr;
 }
 
 template <class Type>
 HashNode<Type> :: HashNode(Type data)
 {
-    
+    isStuffed = true;
+    nextNode = nullptr;
+    this->data = data;
 }
 
 template <class Type>
