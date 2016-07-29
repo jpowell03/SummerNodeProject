@@ -25,21 +25,36 @@ HashTable<Type> :: HashTable()
         HashNode<Type> * next = new HashNode<Type>();  // create an node
         currentEnd->setNode(next);                     // connect to the next node
         currentEnd = next;                             // shift to next node
-        
     }
 }
 
 template<class Type>
 void HashTable<Type> :: add(Type data)
 {
-    capacity = 101;
-    size = 0;
-    efficiencyPercentage = 2.0/3.0;
-    front = new HashNode<Type>[capacity];
-    //this->data = data;
+    if((static_cast<double>(size)/capacity) >= efficiencyPercentage)
+    {
+        resize();
+    }
+    
+    // find position (where does it go)
+    long position = findPosition(data);
+    HashNode<Type> * indexPointer = front;
+    
+    for(int index=0; index < position; index++)
+    {
+        indexPointer = indexPointer->getNode();
+    }
+    
+    indexPointer->setData(data);
+    indexPointer->isStuffed(true);
+
 }
 
-
+template<class Type>
+long  HashTable<Type> :: findPosition(Type data)
+{
+    
+}
 
 template<class Type>
 bool  HashTable<Type> :: isPrime(int number)
@@ -70,12 +85,6 @@ void  HashTable<Type> :: resize()
 
 template<class Type>
 long  HashTable<Type> :: nextPrime(long current)
-{
-    
-}
-
-template<class Type>
-long  HashTable<Type> :: findPosition(Type data)
 {
     
 }
